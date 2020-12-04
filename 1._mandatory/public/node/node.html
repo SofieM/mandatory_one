@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../node/node.css">
+    <link rel="stylesheet" href="../global.css">
+    <title>Hvad er Node.js</title>
+</head>
+<body>
+<div class="box-1">
+    <h1>Node.JS</h1>
+    <p>
+    <ol>
+        <li>Er bygget på Chromes V8 javascript engine, så javascript kan køres backend og ikke kun i browseren</li>
+        <li>Er synkront/non-blocking - kun én tråd. Læs mere om dette <a href="/node/async">her</a></li>
+        <li>Scope i .js-filer i Node er lokalt (hvorimod javascript i browseren har det globale 'window object')</li>
+        <ul>
+            <li>For at benytte et script globalt, skal det eksporteres med module.exports og importeres i en anden .js-fil med require()</li>
+            <li>Læs mere om moduler <a href="/modules">her</a></li>
+        </ul>
+    </ol>
+    <ul>
+        <li>Et Node projekt kan bl.a. startes ved - i terminalen - at cd'e til den mappe ens projekt ligger i og skrive <b>npm init -yes</b></li>
+        <li>Herved autogenereres en package.json fil, som indeholder en oversigt over projektets navn, dependencies mv.</li>
+        <img id="package_json" src="../assets/packageJson.JPG">
+        <li>Når et projekt deles med andre (f.eks. på gitHub), deler man ikke den mappe der indeholder alle de modules, projektet bruger - mappen "node_modules" - da den kan fylde meget</li>
+        <li>Da alle dependencies er skrevet ind i package.json filen, kan man ved hjælpe af denne installere dem alle ved at skrive <b>npm install</b> i terminalen</li>
+        <li>Projektet vil herefter have alle de moduler installeret, som det benytter sig af</li>
+    </ul>
+    </p>
+</div>
+</body>
+</html>

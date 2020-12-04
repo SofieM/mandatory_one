@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../async/async.css">
+    <link rel="stylesheet" href="../global.css">
+    <title>Asynkron programmering</title>
+</head>
+<body>
+<div class="box-1">
+    <p>
+        <h1>Asynkron programmering</h1>
+        Som beskrevet under "node" afsnittet, er Node.JS en-trådet og non-blocking.
+        Det betyder, at den samme tråd udfører alt i applikationen, men det gøres, uden at ét kald blokere evt. andre kald
+        I andre en-trådede applikationer, vil en tråd være blokeret fra at kunne håndtere andre kald, så længe den er i gang med en opgave
+        I Node.JS køres det asynkront:
+        <ul>
+            <li>Tråden tager f.eks mod et kald, som anmoder om en ressource</li>
+            <li>Tråden planlægger herefter et databasekald, for at få fat i denne ressource</li>
+            <li>Imens ressourcen hentes fra databasen, er tråden ledig til at håndtere andre kald til applikationen</li>
+            <li>Når ressourcen er hentet fra databasen, vender tråden tilbage til opgaven og sender ressourcen tilbage til dén der har anmodet om den</li>
+        </ul>
+
+        For at arbejde asynkront benyttes callbacks og Promises
+        <br>
+        <h4>Callbacks</h4>
+        <ul>
+            <li>En funktion, der kaldes, når resultatet af en asynkron operation er klar</li>
+            <li>Dette gøres for at undgå blokering, og muliggører at anden kode kan udføres, mens der ventes på et resultat</li>
+            <li>Eksemplet ovenfor med databasekaldet, kunne se således ud i en callback funktion: </li>
+            <img id="callback_function" src="../assets/asyncOperation.JPG">
+        </ul>
+        <h4>Promises</h4>
+        <ul>
+            <li>Et objekt, som lagrer det resultat, der kommer ud af en asynkron operation</li>
+            <ul>
+                <li>Når et objekt oprettes er det "pending"</li>
+                <li>Objektet udfører en asynkron operation</li>
+                <li>Hvis operationen er succesfuld ændres objektets state til "fulfilled" og det har fået en værdi, der kan anvendes andre steder i ens applikation </li>
+                <li>Hvis noget i operationen er fået galt er objektets state i stedet "rejected"</li>
+                <img id="promises_state" src="../assets/promises.JPG">
+            </ul>
+            <li>Promise objektet kan 'consumes'/bruges med metoderne .then og .catch</li>
+            <ul>
+                <li>hvis objektet er "fulfilled" kaldes .then</li>
+                <li>Hvis ikke kaldes .catch</li>
+            </ul>
+                <li>Man kan også benyttes sig af async/await, hvis man vil anvende Promises på en anden måde</li>
+            <ul>
+                <li>En async funktion returnere et promise objekt</li>
+                <img id="async_function" src="../assets/asyncFunction.JPG">
+                <li>For at kalde denne funktion skrives "await" foran kaldet. </li>
+                <li>Den metode, der kalder async metoden, skal anføres med "async" </li>
+                <img id="await" src="../assets/await.JPG">
+            </ul>
+        </ul>
+    </p>
+</div>
+</body>
+</html>

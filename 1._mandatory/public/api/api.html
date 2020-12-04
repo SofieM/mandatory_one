@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../global.css">
+    <title>Cars API</title>
+</head>
+<body>
+<div class="box-1">
+    <p>
+        <h3>Mit Cars-API</h3>
+        I denne mandatory findes det lille cars-api vi har lavet i timen
+        <ul>
+            <li><b>GET cars</b></li>
+            <ul>
+                <li>URL: http://localhost:3000/api/cars</li>
+                <li>Hvis man skriver ovenstående url sendes en liste(her i json-format) med ALLE biler, der er i samlingen cars</li>
+            </ul>
+            <li><b>GET cars/:id</b></li>
+            <ul>
+                <li>URL: http://localhost:3000/api/cars/{tal fra 1-4}</li>
+                <li>Hvis man skriver ovenstående url får man et json-object retur med den 'car' der har id=det indtastede tal </li>
+            </ul>
+            <li><b>POST cars/</b></li>
+            <ul>
+                <li>URL: http://localhost:3000/api/cars/</li>
+                <li>Hvis man i POSTMAN laver et POST-request på ovenstående url(med en body i raw json {"model":"bil-mærke"}), indsættes den nye bil i samlingen</li>
+                <li>Den samlede liste sendes retur</li>
+            </ul>
+            <li><b>PATCH cars/:id</b></li>
+            <ul>
+                <li>URL: http://localhost:3000/api/cars/{tal fra 1-4}</li>
+                <li>Hvis man i POSTMAN laver et PATCH-request på ovenstående url(med en body i raw json {"model":"bil-mærke"}) opdateres den car i samlingen, der har det id, der er angivet i url'en </li>
+                <li>En samlet liste sendes retur, med den opdaterede "model"-værdi</li>
+            </ul>
+            <li><b>DELETE cars/:id</b></li>
+            <ul>
+                <li>URL: http://localhost:3000/api/cars/{tal fra 1-4}</li>
+                <li>Hvis man i POSTMAN laver et DELETE-request på ovenstående url slettes den car, der har det id, der er angivet i url'en </li>
+                <li>En samlet liste sendes retur, nu uden den slettede bil</li>
+            </ul>
+        </ul>
+        Ovenstående routes, følger den generelle konvention for api'er, som anvendes for at gøre det nemt at kalde:
+    <ul>
+        <li>Når jeg laver et GET request ved jeg, at jeg får en hel samling tilbage</li>
+        <li>Ligesom jeg ved, at et GET request inkl. et id, giver mig én ressource tilbage</li>
+        <li>Ved at anvende et POST-request ved jeg, at jeg opdaterer en samling med én ressource</li>
+        <li>Når jeg laver et PATCH request på et givent id, ved jeg, at det opdaterer én resource</li>
+        <li>Et DELETE request med et id ved jeg, sletter én ressource fra samlingen</li>
+    </ul>
+    Blot ved at se på typen af request og navnet i min sti (her cars) ved jeg, hvilken samling jeg arbejde med, og om jeg henter, opdaterer, opretter eller sletter en ressource
+    </p>
+</div>
+
+</body>
+</html>
