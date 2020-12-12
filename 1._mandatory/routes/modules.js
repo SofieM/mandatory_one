@@ -2,11 +2,9 @@ const router = require('express').Router();
 
 const fs = require('fs');
 
-const path = 'C:\\Users\\Sofie\\IdeaProjects\\node_valgfag\\mandatory_one\\1._mandatory\\';
-
-const modules = fs.readFileSync(path + '/public/modules/modules.html').toString();
-const nodemon_info = fs.readFileSync(path + '/public/nodemon/nodemon.html').toString();
-const express_info = fs.readFileSync(path + '/public/express/express.html').toString();
+const modules = fs.readFileSync(__dirname + '/../public/modules/modules.html').toString();
+const nodemon_info = fs.readFileSync(__dirname + '/../public/nodemon/nodemon.html').toString();
+const express_info = fs.readFileSync(__dirname + '/../public/express/express.html').toString();
 
 router.get('/', (req, res) => {
     return res.send(modules);

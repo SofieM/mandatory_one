@@ -2,10 +2,8 @@ const router = require('express').Router();
 
 const fs = require('fs');
 
-const path = 'C:\\Users\\Sofie\\IdeaProjects\\node_valgfag\\mandatory_one\\1._mandatory\\';
-
-const node = fs.readFileSync(path + '/public/node/node.html').toString();
-const asyncInfo = fs.readFileSync(path + '/public/async/async.html').toString();
+const node = fs.readFileSync(__dirname + '/../public/node/node.html').toString();
+const asyncInfo = fs.readFileSync(__dirname + '/../public/async/async.html').toString();
 
 router.get('/', (req, res) => {
 
